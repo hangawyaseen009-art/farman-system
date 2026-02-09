@@ -2,7 +2,8 @@
 <html lang="ku" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<title>سیستەمی ژمێریاری پڕۆفیشنال</title>
+<title>سیستەمی ژمێریاری</title>
+
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -18,19 +19,20 @@
 </div>
 
 <header>
-<h3>سیستەمی ژمێریاری</h3>
+<h3>سیستەمی ژمێریاری پڕۆفیشنال</h3>
 <div class="nav">
-<button onclick="showPage('main')">بازرگانەکان</button>
+<button onclick="showPage('main')">ناوی کڕیارەکان</button>
 <button onclick="showPage('income')">داهات / خەرجی / قەرز</button>
 <button onclick="toggleDark()">🌙</button>
+<button onclick="window.print()">🧾 وەسڵ</button>
 </div>
 </header>
 
 <div class="container">
 
-<!-- PRIVATE -->
+<!-- PRIVATE ACCOUNT -->
 <div class="card">
-<h4>حسابی تایبەت – فەرمان</h4>
+<h4>حسابی تایبەت – فەرمان محمد خدر</h4>
 <p>باڵانس: <b id="privateBalance">0</b></p>
 <input id="pAmount" placeholder="بڕی پارە">
 <select id="pType">
@@ -38,6 +40,7 @@
 <option>کەمکردنەوە</option>
 </select>
 <button class="green" onclick="privateAdd()">OK</button>
+<button class="gray" onclick="excelPrivate()">📊 Excel</button>
 </div>
 
 <!-- TRADERS -->
@@ -45,20 +48,25 @@
 <h4>بازرگانەکان</h4>
 <input id="nName" placeholder="ناو">
 <input id="nPhone" placeholder="مۆبایل">
+<input id="nManifest" placeholder="کۆدی مەنەفێست">
 <input id="nAmount" placeholder="بڕی پارە">
 <select id="nType">
 <option>زیادکردن</option>
 <option>کەمکردنەوە</option>
 </select>
+<select id="nCargo">
+<option>جۆری بار</option>
+<option>باری خواردن</option>
+<option>باری میوە</option>
+<option>باری دەرمان</option>
+</select>
 <button class="green" onclick="addTrader()">OK</button>
+<button class="blue" onclick="excelAll()">📊 Excel گشتی</button>
 
 <table>
 <thead>
 <tr>
-<th>ناو</th>
-<th>مۆبایل</th>
-<th>باڵانس</th>
-<th>سڕینەوە</th>
+<th>ناو</th><th>مۆبایل</th><th>باڵانس</th><th>Excel</th><th>سڕینەوە</th>
 </tr>
 </thead>
 <tbody id="list"></tbody>
@@ -68,22 +76,19 @@
 <!-- INCOME -->
 <div id="incomePage" class="card" style="display:none">
 <h4>داهات / خەرجی / قەرز</h4>
-<input id="inc" placeholder="داهات">
-<button onclick="addVal('inc')">+</button>
-
-<input id="exp" placeholder="خەرجی">
-<button onclick="addVal('exp')">+</button>
-
-<input id="debt" placeholder="قەرز">
-<button onclick="addVal('debt')">+</button>
+<input id="inc" placeholder="داهات"><button onclick="addVal('inc')">+</button>
+<input id="exp" placeholder="خەرجی"><button onclick="addVal('exp')">+</button>
+<input id="debt" placeholder="قەرز"><button onclick="addVal('debt')">+</button>
 
 <p>💰 داهات: <b id="tInc">0</b></p>
 <p>💸 خەرجی: <b id="tExp">0</b></p>
 <p>📉 قەرز: <b id="tDebt">0</b></p>
+<button class="gray" onclick="excelIncome()">📊 Excel</button>
 </div>
 
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
