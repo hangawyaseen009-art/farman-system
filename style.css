@@ -1,3 +1,22 @@
+body{margin:0;font-family:Tahoma;background:#f6f6f6;color:#111}
+header{background:#000;color:#fff;padding:12px;display:flex;justify-content:space-between;align-items:center}
+button{padding:8px 12px;border:none;border-radius:8px;cursor:pointer}
+.card{background:#fff;border-radius:12px;padding:15px;margin-bottom:15px;box-shadow:0 0 5px #ccc}
+input,select{width:100%;padding:10px;margin-bottom:8px;border-radius:8px;border:1px solid #ccc}
+table{width:100%;border-collapse:collapse}
+th,td{padding:8px;border-bottom:1px solid #eee;text-align:center}
+.container{padding:15px}
+.nav button{background:#444;color:#fff;margin-left:5px}
+.green{background:#0a7;color:#fff}
+.red{background:#c33;color:#fff}
+.gray{background:#888;color:#fff}
+.blue{background:#0066cc;color:#fff}
+
+.dark{background:#111;color:#fff}
+.dark .card{background:#1e1e1e}
+.dark input,.dark select{background:#222;color:#fff;border-color:#444}
+
+/* LOGIN */
 #loginBox{
 position:fixed;
 top:0;left:0;
@@ -12,3 +31,4 @@ z-index:9999
 width:300px;
 text-align:center
 }
+
